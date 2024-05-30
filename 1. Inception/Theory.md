@@ -2,7 +2,7 @@
 Ans: Emmet is a plugin for many popular text editors that greatly improves HTML and CSS workflow. It's essentially a shorthand system that allows developers to write large chunks of code quickly and efficiently. Emmet uses an abbreviation system that expands into full-fledged HTML or CSS code.
 Example ->
 Type html:5 and press Tab to generate a basic HTML5 template:
-html
+```
             <!DOCTYPE html>
             <html lang="en">
             <head>
@@ -14,7 +14,7 @@ html
                 
             </body>
             </html>
-
+```
 
 ### Q: What is CDN? Why do we use it?
 Ans: A Content Delivery Network (CDN) is a network of geographically distributed servers that work together to deliver web content to users more efficiently. Instead of serving content from a single origin server, CDNs cache static content, such as images, CSS files, JavaScript files, videos, and other types of web assets, on multiple servers located in different geographic locations.
