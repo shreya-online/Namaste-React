@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
+    <div id="root">
+        <h1>This is inside root</h1>
+        <!-- What ever we write inside this root gets replaced by the react code done by root.render() method. Javascript starts reading
+        line by line from index.html reads <h1>This is inside root</h1> and prints the statement in the browser. Then it reads about 
+        react and react-dom from the cdn link and ultimately goes to app.js . Inside App.js react sees that root.render() is asking to 
+        render something else controlled by react. Hence it replaces whatever was written inside the div tag with root with whatever 
+        root.render method is asking to display. Hence on refreshing the page, we get to see "This is inside root" displaying for 
+        few miliseconds and then displaying the content by root.render method-->
+    </div>
     <!-- React CDN links-->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- <script>
+        const heading = React.createElement("h1",{},"Namaste Javascript")
+
+        const root = ReactDOM.createRoot(document.getElementById("root"))
+
+        root.render(heading)
+    </script> -->
+    <script src="./App.js"></script>
 </body>
 </html>
