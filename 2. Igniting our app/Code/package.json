@@ -1,0 +1,22 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreya-online/Namaste-React.git"
+  },
+  "author": "Shreya Manna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shreya-online/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/shreya-online/Namaste-React#readme",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
