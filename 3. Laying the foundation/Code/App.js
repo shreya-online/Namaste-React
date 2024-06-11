@@ -1,73 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'
 
-const heading = React.createElement("h1",{
-    id: "heading"
-}, "Namaste React")
-
-        const root = ReactDOM.createRoot(document.getElementById("root"));
-
-        root.render(heading);
-
-
-/*  *******Nested Structure of createElement with parent child structure like -> ********* 
-<div id="parent" >
-    <div id="child">
-        <h1>Nested parent child structure of createElement</h1>
-    </div>
-</div>  
+// written using core react.
+/*   Here, React.createElement creates  => ReactElement (which is a JS Object) gets converted to =>  HTMLElement(by root.render)
 */
-const parent = React.createElement("div",{id: "parent"}, 
+const heading = React.createElement("h1", {id: "heading"}, "Hello there!!!") 
+const root =ReactDOM.createRoot(document.getElementById('root')) 
+root.render(heading)
 
-        React.createElement("div", {id: "child"}, 
-        React.createElement("h1", {id: "heading"}, "Nested parent child structure of createElement")
-    )   
+// same code as above but written with jsx
+/*   Here, JSX converted to (by babel)=> React.createElement creates  => ReactElement (which is a JS Object) gets converted to => 
+     HTMLElement(by root.render)
+*/
+const jsxHeading = <h1 id='heading'>Hi i am jsx !!</h1>
+root.render(jsxHeading)
+
+//React Element
+const titleElement =(
+     <h1>
+          Namaste
+     </h1>
 );
 
-root.render(parent)
+// Component Compositions -> composing 2 components into one another
+const Title =() =>{
+     <h1>
+          Namaste React Title
+     </h1>
+}
+const FunComponent = () =>{
+     <div>
+          <Title />
+          <h1>
+               Welcome to the course
+          </h1>
+     </div>
+}
+root.render(<FunComponent />)
 
-
-/*  *******Nested Structure of createElement with sibling like structure-> ********* 
-<div id="parent">
-    <div id="child">
-        <h1>Tag 1</h1>
-        <h2>Tag 2</h2>
-    </div>
-</div>  
-*/
-
-const parent1 = React.createElement("div", {id: "parent"},
-    
-        React.createElement("div", {id: "child"},[
-            React.createElement("h1",{id: 'tagOne'}, "Tag 1"),
-            React.createElement("h2",{id: "tagTwo"}, "Tag 2")
-        ])
+//How to insert React Element inside a functional omponent
+const titleElement2 =(
+     <h1>
+          React Element2
+     </h1>
 );
-root.render(parent1)
+const funcComponent2 = () =>{
+     {titleElement2}
+}
 
-/*  *******Nested Structure of createElement with sibling like and parent child structure-> ********* 
-<div id="parent">
-    <div id="child">
-        <h1>Tag 1</h1>
-        <h2>Tag 2</h2>
-    </div>
-    <div id="child2">
-        <h1>Tag 3</h1>
-        <h2>Tag 4</h2>
-    </div>
-</div>  
-*/
-
-const parent3 = React.createElement("div", {id: "parent"}, [
-        React.createElement("div", {is: "child1"},[
-            React.createElement("h1",{},"Tag 1"),
-            React.createElement("h2", {}, "Tag 2")
-        ])
-    ],
-    [React.createElement("div", {id: "child2"},[
-        React.createElement("h1",{}, "Tag 3"),
-        React.createElement("h2",{}, "Tag 4")
-    ])
-  ]
+// How to insert a React Element inside another React element
+const titleElement3 =(
+     <span>
+          React Element3
+     </span>
 );
-root.render(parent3)
+const elem = (
+     {titleElement3}
+)
