@@ -21,15 +21,16 @@ return (
     </div>
 )}
 
-const RestaurantCard = () =>{
+const RestaurantCard = (props) =>{
+    console.log(props)
     return(
         <div className='restro-cards'>
                 <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPhgVJ_EdConWcowWxq3cZ9_3MxZMpxcn6A&s'
                 alt='restro-cardImg'
                 className='restro-cardImg'
                 />
-                <h3>Meghna Foods</h3>
-                <h5>Chinese, Indian, Continental</h5>
+                <h3>{props.resname}</h3>
+                <h5>{props.cuisine}</h5>
                 <h5>4.4 stars</h5>
         </div>
 )}
@@ -41,8 +42,9 @@ const BodyComponent = () => {
                 <button>Search</button>
             </div>
             <div className='resro-container'>
-                <RestaurantCard />
-                <RestaurantCard />
+                 {/* Passing props through components*/}
+                <RestaurantCard resname="Meghna Foods" cuisine="North Indian, Chinese, Continental"/>
+                <RestaurantCard resname="UNO" cuisine="Italian, Mexican, Continental"/>
             </div>
         </div>
     )
