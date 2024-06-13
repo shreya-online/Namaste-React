@@ -25,3 +25,10 @@ Key Features of Babel
 
 ## Q: What is a `Component Composition` in React?
 ANS: Component composition in React involves combining smaller, independent components to create complex UIs. Each sub-component can contain further components, enhancing code readability. This process breaks down the UI into manageable pieces, aiding traceability, scalability, and maintenance.
+
+## References:
+- [Babel](https://babeljs.io/)
+- [Attribute Type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type)
+- [JS Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+- [Babel Playground](https://babeljs.io/repl#)
+- [React without JSX](https://reactjs.org/docs/react-without-jsx.html)
