@@ -2207,17 +2207,29 @@ return (
     </div>
 )}
 
+const imgUrl = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
 const RestaurantCard = (props) =>{
+  // [2] --> 
+    const {resData} = props
+    // {console.log(props)}
+    {console.log(resData)}
     return(
         <div className='restro-cards'>
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPhgVJ_EdConWcowWxq3cZ9_3MxZMpxcn6A&s'
+                <img src={imgUrl+'/' +resData.data.cloudinaryImageId}
+                // src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPhgVJ_EdConWcowWxq3cZ9_3MxZMpxcn6A&s'
                 alt='restro-cardImg'
                 className='restro-cardImg'
                 />
-                <h3>{props.resname}</h3>
-                <h5>{props.cuisine}</h5>
-                <h5>4.4 stars</h5>
+                {/* [1] --> passed props through components called here */}
+                {/* <h3>{props.resname}</h3>
+                <h5>{props.cuisine}</h5> */}
+
+                {/* [2] --> accessing resData */}
+                <h3>{resData.data.name}</h3>
+                <p>Cuisines: {resData.data.cuisines.join(", ")}</p>
+                <p>Rating: {resData.data.avgRating}</p>
+                <p>Cost for Two: Rs. {resData.data.costForTwo/100}</p>
         </div>
 )}
 
@@ -2228,9 +2240,13 @@ const BodyComponent = () => {
                 <button>Search</button>
             </div>
             <div className='resro-container'>
-                 {/* Passing props through components*/}
-                <RestaurantCard resname="Meghna Foods" cuisine="North Indian, Chinese, Continental"/>
-                <RestaurantCard resname="UNO" cuisine="Italian, Mexican, Continental"/>
+                 {/* [1] --> Passing props through components*/}
+                {/* <RestaurantCard resname="Meghna Foods" cuisine="North Indian, Chinese, Continental"/>
+                <RestaurantCard resname="UNO" cuisine="Italian, Mexican, Continental"/> */}
+
+                {/* [2] --> Passing restObj that is the data object in the component by assigning it to a variable*/}
+                <RestaurantCard resData= {resObj} />
+                
             </div>
         </div>
     )

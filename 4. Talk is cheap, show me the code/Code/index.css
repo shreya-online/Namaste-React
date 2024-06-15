@@ -34,6 +34,10 @@
     background-color: #f0f0f0;
 }
 
+.restro-cardImg{
+    width: 225px;
+}
+
 .restro-cards:hover{
     border: 1px solid black;
     cursor: pointer;
