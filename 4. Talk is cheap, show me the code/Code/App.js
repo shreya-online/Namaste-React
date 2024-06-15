@@ -2210,9 +2210,13 @@ return (
 const imgUrl = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
 const RestaurantCard = (props) =>{
-  // [2] --> 
+  // [2] --> props value stored in resData
     const {resData} = props
     // {console.log(props)}
+
+    // [3] --> Destructuring props in react; resData.data has name, cuisines, avgRating, costForTwo attributes. 
+    // During destructuring, those attribute names are to be used only. name, cuisines, avgRating, costForTwo are inside of resData.data
+    const {name, cuisines, avgRating, costForTwo} = resData.data
     {console.log(resData)}
     return(
         <div className='restro-cards'>
@@ -2226,10 +2230,17 @@ const RestaurantCard = (props) =>{
                 <h5>{props.cuisine}</h5> */}
 
                 {/* [2] --> accessing resData */}
-                <h3>{resData.data.name}</h3>
+                {/* <h3>{resData.data.name}</h3>
                 <p>Cuisines: {resData.data.cuisines.join(", ")}</p>
                 <p>Rating: {resData.data.avgRating}</p>
-                <p>Cost for Two: Rs. {resData.data.costForTwo/100}</p>
+                <p>Cost for Two: Rs. {resData.data.costForTwo/100}</p> */}
+
+
+                {/* [3] --> accessing Data after destructuring resData/props */}
+                <h3>{name}</h3>
+                <p>Cuisines: {cuisines.join(', ')}</p>
+                <p>Rating: {avgRating}</p>
+                <p>Cost for Two: Rs. {costForTwo/100}</p>
         </div>
 )}
 
