@@ -2250,13 +2250,37 @@ const BodyComponent = () => {
             <div className='search'>
                 <button>Search</button>
             </div>
-            <div className='resro-container'>
+            <div className='restro-container'>
                  {/* [1] --> Passing props through components*/}
                 {/* <RestaurantCard resname="Meghna Foods" cuisine="North Indian, Chinese, Continental"/>
                 <RestaurantCard resname="UNO" cuisine="Italian, Mexican, Continental"/> */}
 
                 {/* [2] --> Passing restObj that is the data object in the component by assigning it to a variable*/}
-                <RestaurantCard resData= {resObj} />
+                {/* <RestaurantCard resData= {resObj} /> */}
+
+                {/* [4] --> To create each restro card, we are calling the RestaurantCard component numerous time and this is not 
+                feasible. Better to loop it */}
+                {/* <RestaurantCard resData= {resList[0]} />
+                <RestaurantCard resData= {resList[1]} />
+                <RestaurantCard resData= {resList[2]} />
+                <RestaurantCard resData= {resList[3]} />
+                <RestaurantCard resData= {resList[4]} />
+                <RestaurantCard resData= {resList[5]} />
+                <RestaurantCard resData= {resList[6]} />
+                <RestaurantCard resData= {resList[7]} />
+                <RestaurantCard resData= {resList[8]} />
+                <RestaurantCard resData= {resList[9]} />
+                <RestaurantCard resData= {resList[10]} />
+                <RestaurantCard resData= {resList[11]} />
+                <RestaurantCard resData= {resList[12]} />
+                <RestaurantCard resData= {resList[13]} />
+                <RestaurantCard resData= {resList[14]} /> */}
+
+                {/* [4] --> To loop it, we will use map function. Here we have looped over restList(an array) and we are 
+                doing a .map for each "restaurant" and we are returning a piece of jsx: (<RestaurantCard resData= {restaurant} />) */}
+                {
+                  resList.map( (restaurant) => (<RestaurantCard resData= {restaurant} />)
+                )}
                 
             </div>
         </div>
