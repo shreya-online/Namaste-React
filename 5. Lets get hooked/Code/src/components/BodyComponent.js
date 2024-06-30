@@ -94,7 +94,11 @@ const BodyComponent = () => {
         
     ]
 
-    const [listOfRestaurants, setListOfRestaurants] = useState(restaurantJson)
+    // with demo data of restaurantJson
+    // const [listOfRestaurants, setListOfRestaurants] = useState(restaurantJson)    
+
+    const [listOfRestaurants, setListOfRestaurants] = useState(resList)
+    
     return(
         <div className='body-container'>
             <div className='search'>
