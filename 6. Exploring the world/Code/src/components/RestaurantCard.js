@@ -4,7 +4,7 @@ import { IMG_URL } from '../utils/constants';
 
 const RestaurantCard = (props) =>{
     const {resData} = props
-    const {name, cuisines, avgRating, costForTwo} = resData.data
+    const {name, cuisines, avgRating, costForTwo} = resData?.data;
 
     return(
         <div className='restro-cards'>
