@@ -5,8 +5,12 @@ import Shimmer from './Shimmer';
 
 const BodyComponent = () => {
 
+  //to proof that with each state variable change, the whole component rerenders . Applicable even during searchText state change
+  console.log("Header render")
+
   const [listOfRestaurants, setListOfRestaurants] = useState(resList)
   // const [listOfRestaurants, setListOfRestaurants] = useState([])
+  const [searchText, setSearchText] = useState("");
 
   useEffect( () =>{
     fetchData();
@@ -34,10 +38,25 @@ const BodyComponent = () => {
     return listOfRestaurants ===0 ? <Shimmer /> : 
       (
         <div className='body-container'> 
-            <div className='search'>
-                <button>Search</button>
-            </div>
             <div className='filter'>
+                <div className='search'>
+                    <input type='text' className='search-box' value={searchText} 
+                    onChange={ (e) =>{
+                        setSearchText(e.target.value)
+                        // console.log(e.target.value)
+                      } 
+                    } />
+                    <button className='search-btn' 
+                    onClick={ () => {
+                      const searchedRestaurant = listOfRestaurants.filter(
+                        (res) => res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                      )
+                        setListOfRestaurants(searchedRestaurant);
+                    } }
+                  >Search</button>
+                    {console.log(searchText)}
+                </div>
+
                 <button className='filter-btn' onClick={ () =>{
                     let filteredList= listOfRestaurants.filter(
                         (res) => res.data.avgRating > 4 
