@@ -63,3 +63,33 @@
     cursor: pointer;
 }
 
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .shimmer-card {
+    width: 200px;
+    height: 400px;
+    background-color: #d0c8c8;
+    margin: 20px;
+    border-radius: 11px;
+  }
+
+  .login-btn {
+    background-color: orange;
+    border-radius: 5px;
+    padding: 7px 15px;
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  .filter {
+    display: flex;
+    margin-top: 10px;
+  }
+

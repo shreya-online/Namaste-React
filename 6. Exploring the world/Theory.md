@@ -136,3 +136,26 @@ app.listen(3000, () => {
 3. `Use Secure Protocols:` Ensure that both the client and server are using HTTPS to protect data in transit.
 
 4. `Handle Credentials Securely:` Only allow credentials when necessary and ensure proper authentication and authorization mechanisms are in place.
+
+
+## Q: What is `Shimmer UI`?
+ANS: A Shimmer UI (also known as a shimmer effect or skeleton loading) is a design technique used to enhance the user experience during the loading of content in web and mobile applications. It involves displaying placeholder elements that mimic the structure of the content being loaded, often with an animated gradient effect that gives the impression of a light passing over the placeholders. This effect helps to improve perceived performance by showing users that content is being loaded and where it will appear, making the wait feel shorter and more intuitive.
+
+`Key Concepts of Shimmer UI`
+1. Placeholder Elements: These are lightweight, simplified representations of the actual content, such as grey boxes for images or lines for text. They take the same shape and size as the content they represent.
+
+2. Loading Animation: A shimmer effect usually involves an animated gradient that moves across the placeholder elements, creating a visual illusion of content loading.
+
+3. User Perception: The shimmer effect improves user perception by making the interface feel more responsive and engaging during data fetching or processing times.
+
+## Q: What is `Conditional Rendering`? 
+ANS: Conditional Rendering in React refers to the process of displaying different content or components based on certain conditions or states. This is similar to how conditionals work in JavaScript, such as using if statements or ternary operators. React provides several ways to achieve conditional rendering, making it possible to render parts of the UI based on the current state or props.
+
+`Use Cases for Conditional Rendering`
+1. `Authentication:` Displaying different views for logged-in users and guests.
+
+2. `Feature Toggles:` Enabling or disabling features based on user roles or permissions.
+
+3. `Loading States:` Showing a loading spinner or message while fetching data.
+
+4. `Error Handling:` Displaying error messages when something goes wrong.

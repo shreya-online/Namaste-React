@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import RestaurantCard from './RestaurantCard';
 import resList from '../utils/restaurantData';
+import Shimmer from './Shimmer';
 
 const BodyComponent = () => {
 
   const [listOfRestaurants, setListOfRestaurants] = useState(resList)
+  // const [listOfRestaurants, setListOfRestaurants] = useState([])
 
   useEffect( () =>{
     fetchData();
@@ -19,16 +21,19 @@ const BodyComponent = () => {
       console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
       //Right code but giving error
-      setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      // setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
-    if(listOfRestaurants ===0){
-      return (
-        <h1> Loading...</h1>
-      )
-    }
-    return(
-        <div className='body-container'>
+    // Conditional rendering
+    // if(listOfRestaurants ===0){
+    //   return (
+    //     / <h1> Loading...</h1>
+    //     <Shimmer />
+    //   )
+    // }
+    return listOfRestaurants ===0 ? <Shimmer /> : 
+      (
+        <div className='body-container'> 
             <div className='search'>
                 <button>Search</button>
             </div>
