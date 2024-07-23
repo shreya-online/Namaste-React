@@ -8,9 +8,11 @@ const BodyComponent = () => {
   //to proof that with each state variable change, the whole component rerenders . Applicable even during searchText state change
   console.log("Header render")
 
-  const [listOfRestaurants, setListOfRestaurants] = useState(resList)
-  // const [listOfRestaurants, setListOfRestaurants] = useState([])
+  // const [listOfRestaurants, setListOfRestaurants] = useState(resList)
+  const [listOfRestaurants, setListOfRestaurants] = useState([])
+
   const [searchText, setSearchText] = useState("");
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   useEffect( () =>{
     fetchData();
@@ -24,8 +26,9 @@ const BodyComponent = () => {
       const json =await data.json();
       console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
-      //Right code but giving error
-      // setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      //Right code which was giving error earlier
+      setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
     // Conditional rendering
@@ -54,14 +57,14 @@ const BodyComponent = () => {
                         setListOfRestaurants(searchedRestaurant);
                     } }
                   >Search</button>
-                    {console.log(searchText)}
+                    {/* {console.log(searchText)} */}
                 </div>
 
                 <button className='filter-btn' onClick={ () =>{
                     let filteredList= listOfRestaurants.filter(
                         (res) => res.data.avgRating > 4 
                     );
-                    setListOfRestaurants(filteredList)
+                    setFilteredRestaurant(filteredList)
                 }}>
                     Top Rated Restaurants</button>
             </div>
@@ -72,7 +75,7 @@ const BodyComponent = () => {
                 )} */}
 
             {
-                listOfRestaurants.map( (restaurant,index) => (<RestaurantCard key={restaurant.data.id} resData= {restaurant} />)
+                filteredRestaurant.map( (restaurant) => (<RestaurantCard key={restaurant.info.id} resData= {restaurant} />)
             )}
                 
             </div>

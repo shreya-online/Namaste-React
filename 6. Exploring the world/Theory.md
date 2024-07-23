@@ -159,3 +159,30 @@ ANS: Conditional Rendering in React refers to the process of displaying differen
 3. `Loading States:` Showing a loading spinner or message while fetching data.
 
 4. `Error Handling:` Displaying error messages when something goes wrong.
+
+
+`From Akshay's Notes`
+## Q: What is `async and await`?
+
+A: `Async`: It simply allows us to write promises-based code as if it was synchronous and it checks that we are not breaking the execution thread. It operates asynchronously via the event loop. Async functions will always return a promise. It makes sure that a promise is returned and if it is not returned then JavaScript automatically wraps it in a promise which is resolved with its value.
+`Await`: Await function is used to wait for the promise. It could be used within the `async` block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
+for example:
+
+```
+// async function getRestaurant to fetch Swiggy API data
+  async function getRestaurants() {
+    const data = await fetch(
+      "Swiggy_API_URL"
+    );
+    const json = await data.json();
+    // we get the Swiggy API data in json format
+    console.log(json);
+  }
+```
+
+## Q: What is the use of `const json = await data.json()`; in `getRestaurants()`?
+
+A: The `data` object, returned by the `await fetch()`, is a generic placeholder for multiple data formats.
+so we can extract the `JSON object` from a `fetch` response by using `await data.json()`.
+`data.json()` is a method on the data object that lets you extract a `JSON object` from the data or response. The method returns a promise because we have used `await` keyword.
+so `data.json()` returns a promise resolved to a `JSON object`.
