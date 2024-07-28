@@ -1,6 +1,7 @@
 import React from 'react';
 import { LOGO_URL } from '../utils/constants';
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 const Header= () =>{
 
@@ -17,10 +18,11 @@ const Header= () =>{
             </div>
             <div className='navItems-container'>
                 <ul>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Offers</li>
-                    <li>Cart</li>
+                    {/* <li href="#">About Us</li> */}
+                    <Link to="/">Home</Link>
+                    <Link to="/about">About Us</Link>
+                    <Link to="/contact">Contact Us</Link>
+                    <Link to="/cart">Cart</Link>
                     <button className='login-btn' 
                         onClick={() =>{
                             btnName==="Login" ? setBtnName("Logout") : setBtnName("Login");
