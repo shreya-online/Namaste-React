@@ -8,6 +8,7 @@ import About from './src/components/About';
 import ContactUs from './src/components/ContactUs';
 import Error from './src/components/Error';
 import Cart from './src/components/Cart';
+import RestaurantMenu from './src/components/RestaurantMenu';
 
 
 const AppLayout = () =>{
@@ -24,8 +25,10 @@ const AppLayout = () =>{
 
 const appRouter = createBrowserRouter([
     {
+        // parent  route
         path: "/",
         element: <AppLayout/>,
+        // child route
         children:[
             {
                 path:"/",
@@ -42,6 +45,11 @@ const appRouter = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart />
+            },
+            //:resId denotes dynamic id
+            {
+                path:'/restaurant/:resId',
+                element: <RestaurantMenu />
             },
         ],
         errorElement: <Error />,
