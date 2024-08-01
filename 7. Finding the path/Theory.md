@@ -22,3 +22,13 @@ Key Characteristics of Single Page Applications:
 `Use of Client-Side Routing:` SPAs typically use client-side routing, where the URL changes do not trigger a full page reload but instead are managed by JavaScript. This allows for deep linking and bookmarking while maintaining the single-page experience.
 
 `Rich Interactivity:` SPAs can offer a high level of interactivity and complex user interfaces, often resembling traditional desktop applications. Features like real-time data updates, drag-and-drop functionality, and rich media can be easily integrated.
+
+## Q: What would happen if we do `console.log(useState())`?
+
+ANS: If we do `console.log(useState())`, we get an array `[undefined, function]` where first item in an array is `state` is `undefined` and the second item in an array is `setState` `function` is bound dispatchSetState.
+
+## Q: What is the difference between `Client Side Routing` and `Server Side Routing`?
+
+A: In `Server-side routing or rendering (SSR)`, every change in URL, http request is made to server to fetch the webpage, and replace the current webpage with the older one.
+
+In `Client-side routing or rendering (CSR)`, during the first load, the webapp is loaded from server to client, after which whenever there is a change in URL, the router library navigates the user to the new page without sending any request to backend. All `Single Page Applications uses client-side routing`.

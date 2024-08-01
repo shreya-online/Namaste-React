@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import RestaurantCard from './RestaurantCard';
 import resList from '../utils/restaurantData';
 import Shimmer from './Shimmer';
@@ -75,7 +76,17 @@ const BodyComponent = () => {
                 )} */}
 
             {
-                filteredRestaurant.map( (restaurant) => (<RestaurantCard key={restaurant.info.id} resData= {restaurant} />)
+                // filteredRestaurant.map( (restaurant) => (<RestaurantCard key={restaurant.info.id} resData= {restaurant} />)
+                // filteredRestaurant.map(restaurant => <RestaurantCard key={restaurant.info.id} resData= {restaurant} />
+                // 2nd one too gives same output
+
+                filteredRestaurant.map( (restaurant) => (
+                  <Link to={"/restaurant/"+ restaurant.info.id} key={restaurant.info.id}>
+                    <RestaurantCard  resData= {restaurant} /> 
+                  </Link>)
+                  // Key should be on the parent tag of map function
+                  //Link is a special component given to us by react-router-dom. But behind the scenes, link is using anchor tag and 
+                  // this can be observed in the element tab of devtools. Link acts like a wrapper over anchor tag coz browser doesn't understand what is a link
             )}
                 
             </div>
