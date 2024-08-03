@@ -8,8 +8,8 @@ const About= () =>{
     return(
         <div>
             <h1>About us page</h1>
-            <User />
-            <UserClass />
+            <User name={"Akshay Saini(functional comp)"}/>
+            <UserClass name={"Akshay Saini (Class Comp)"} location={"Dehradun Class"}/>
         </div>
     )
 }
