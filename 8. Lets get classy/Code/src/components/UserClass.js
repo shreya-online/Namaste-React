@@ -28,6 +28,14 @@ class UserClass extends React.Component {
         })
     }
 
+    componentDidUpdate(){
+        console.log("Component Did Update")
+    }
+
+    componentWillUnmount(){
+        console.log("Component Will Unmount")
+    }
+
     // render(){
     //     return (
     //         <div className='user-card'>

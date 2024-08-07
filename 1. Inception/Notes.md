@@ -19,3 +19,4 @@ npm i react-router-dom
 - [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
 - [React Without ES6](https://reactjs.org/docs/react-without-es6.html)
 - [Index Keys as Anti-Pattern](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
+- [Lifecycle of React class component](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
