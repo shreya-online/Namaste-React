@@ -20,7 +20,8 @@ import UserClass from "./UserClass";
                 <div>
                     <h1>About us page Class component</h1>
                     {/* <User name={"Akshay Saini(functional comp)"}/> */}
-                    <UserClass name={"Akshay Saini (Class Comp)"} location={"Dehradun Class"}/>
+                    <UserClass name={"First Child"} location={"Dehradun Class"}/>
+                    <UserClass name={"Second Child"} location={"US Class"}/>
                 </div>
                 )
             }
