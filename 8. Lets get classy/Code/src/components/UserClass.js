@@ -8,12 +8,24 @@ class UserClass extends React.Component {
         this.state = {
             count: 0,
             count2: 2,
+            userInfo: {
+                name: "Dummy",
+                location: "Default",
+                avatar_url: "Picture"
+            }
         }
-        console.log(this.props.name + "Constructor")
+        // console.log(this.props.name + "Constructor")
     }
 
-    componentDidMount(){
-        console.log(this.props.name + "ComponentDidMount");
+    async componentDidMount(){
+        // console.log(this.props.name + "ComponentDidMount");
+        const data = await fetch('https://api.github.com/users/shreya-online')
+        const json = await data.json()
+        console.log(json)
+        
+        this.setState({
+            userInfo: json,
+        })
     }
 
     // render(){
@@ -35,12 +47,12 @@ class UserClass extends React.Component {
         const {name, location} = this.props
         const {count, count2} = this.state
 
-        console.log(this.props.name + "Render")
+        // console.log(this.props.name + "Render")
 
         return(
             <div className='user-card'>
                 <p>Data from class component</p>
-                <h3>Count: {count}</h3>
+                {/* <h3>Count: {count}</h3>
                 <button onClick={()=>{
                     // NEVER UPDATE STATE VARIABLES DIRECTLY AS SHOWN BELOW
                     // this.state.count= this.state.count + 1 [WRONG WAY]
@@ -49,9 +61,11 @@ class UserClass extends React.Component {
                         // We can update other state variable here as well
                     })
                 }}>Count Increase</button>
-                <p>Count2: {count2}</p>
-                <h2>Name: {name}</h2>
-                <h3>Location: {location}</h3>
+                <p>Count2: {count2}</p> */}
+                <img src= {this.state.userInfo.avatar_url}></img>
+                <h2>Name: {this.state.userInfo.name}</h2>
+                <h3>Location: {this.state.userInfo.location}</h3>
+                
             </div>
         )
     }
