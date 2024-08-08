@@ -1,0 +1,102 @@
+.header-container{
+    /* display flex made the 2 divs(logo-container and navItems-container) horizontal  */
+    display: flex; 
+    /* Made the ul list towards right side */
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.navItems-container {
+    display: flex;
+}
+
+.navItems-container > ul {
+    /* display flex made the lists under ul horizontal  */
+    display:flex;
+    /* list-style-type: none removed the bullets */
+    list-style-type: none;
+    gap: 10px;
+    align-items: center;
+}
+
+.navItems-container > ul > li {
+    padding: 20px 40px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.restro-cards {
+    /* display: flex; */
+    /* border: 1px solid black; */
+    padding: 5px;
+    margin: 10px;
+    width: 225px;
+    background-color: #f0f0f0;
+}
+
+.restro-cardImg{
+    width: 225px;
+    height: 225px;
+}
+
+.restro-cards:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.restro-container{
+    display: flex;
+    /* creates card vertically once horizontal line is saturated */
+    flex-wrap: wrap;
+}
+
+.body-container{
+    margin-left: 110px;
+}
+
+.search{
+    padding: 10px;
+}
+
+.filter-btn{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .shimmer-card {
+    width: 200px;
+    height: 400px;
+    background-color: #d0c8c8;
+    margin: 20px;
+    border-radius: 11px;
+  }
+
+  .login-btn {
+    background-color: orange;
+    border-radius: 5px;
+    padding: 7px 15px;
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  .filter {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .user-card{
+    padding: 10px;
+    border: 1px solid black;
+  }
+
