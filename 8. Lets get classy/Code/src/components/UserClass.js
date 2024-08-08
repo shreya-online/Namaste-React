@@ -29,10 +29,16 @@ class UserClass extends React.Component {
     }
 
     componentDidUpdate(){
-        console.log("Component Did Update")
+        // Problem with SPA having just componentDidUpdate
+        // this.timer is user to reference it to clearInterval
+        this.timer =setInterval(()=>{
+            console.log("React is best")
+        },1000);
+        // console.log("Component Did Update")
     }
 
     componentWillUnmount(){
+        clearInterval(this.timer)
         console.log("Component Will Unmount")
     }
 

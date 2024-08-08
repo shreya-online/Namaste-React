@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useState} from 'react'
 
 const User = ({name}) =>{
 
     const [count]= useState(0);
     const [count2, setCount]= useState(1);
+
+    // replication ofcomponentDidUpdate in Functional component
+    useEffect(()=>{
+        const timer =setInterval(()=>{
+            console.log("SetInterval from functional component")
+        },1000);
+
+        // replication ofcomponentWillUnmount in Functional component
+        return() =>{
+            clearInterval(timer)
+            console.log("SetInterval Cancelled replicating componentWillUnmount")
+        };
+    }, []);
 
     return(
         <div className='user-card'>
